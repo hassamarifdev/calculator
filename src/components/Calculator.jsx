@@ -10,11 +10,18 @@ export default function Calculator() {
     setNumber(number.concat(e.target.value))
   }
 
-
+  //Handle Answer
+  const handleAnswer=()=>{
+    try{
+      setNumber(eval(number).toString())
+    }catch(error){
+      setNumber('Invalid')
+    }
+  }
   return ( 
     <React.Fragment>
       <sectioin>
-        <div className="bg-[#000300] h-screen w-96 mx-auto  overflow-hidden mt-10">
+        <div className="bg-[#000300] h-screen w-96 mx-auto  overflow-hidden -m-12">
           <div className="w-full h-20">
           <input 
           type="text" 
@@ -23,8 +30,8 @@ export default function Calculator() {
           className="w-full h-full border rounded-lg border-white bg-[#000300] text-white text-4xl text-right pr-5"/>
           </div>
           <div className="grid grid-cols-4 gap-2 mt-10 mx-3">
-            <button value='ac' onClick={handleClick} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">AC</button>
-            <button value='c' onClick={handleClick} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">C</button>
+            <button onClick={()=>{setNumber('')}} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">AC</button>
+            <button value='c' onClick={()=>{setNumber(number.slice(0,-1))}} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">C</button>
             <button value='/' onClick={handleClick} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">/</button>
             <button value='+' onClick={handleClick} className="text-gray w-20 h-42 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow row-span-2">+</button>
 
@@ -44,7 +51,7 @@ export default function Calculator() {
 
             <button value='.' onClick={handleClick} className="text-white w-20 h-20 bg-indigo-500 rounded-lg font-bold text-4xl flex justify-center items-center shadow">.</button>
             <button value='0' onClick={handleClick} className="text-white w-20 h-20 bg-indigo-500 rounded-lg font-bold text-4xl flex justify-center items-center shadow">0</button>
-            <button value='=' onClick={handleClick} className="text-gray w-[171px] h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow col-span-2">=</button>
+            <button onClick={handleAnswer} className="text-gray w-[171px] h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow col-span-2">=</button>
           </div>
         </div>
       </sectioin>
