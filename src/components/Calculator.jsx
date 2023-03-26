@@ -21,7 +21,7 @@ export default function Calculator() {
   return ( 
     <React.Fragment>
       <sectioin>
-        <div className="bg-[#000300] h-screen w-96 mx-auto  overflow-hidden -m-12">
+        <div className="bg-[#000300] h-screen w-96 mx-auto  overflow-hidden -m-6">
           <div className="w-full h-20">
           <input 
           type="text" 
