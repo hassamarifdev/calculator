@@ -31,7 +31,7 @@ export default function Calculator() {
           </div>
           <div className="grid grid-cols-4 gap-2 mt-10 mx-3">
             <button onClick={()=>{setNumber('')}} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">AC</button>
-            <button value='c' onClick={()=>{setNumber(number.slice(0,-1))}} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">C</button>
+            <button onClick={()=>{setNumber(number.slice(0,-1))}} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">C</button>
             <button value='/' onClick={handleClick} className="text-gray w-20 h-20 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow">/</button>
             <button value='+' onClick={handleClick} className="text-gray w-20 h-42 bg-[#59dda8] rounded-lg font-bold text-4xl flex justify-center items-center shadow row-span-2">+</button>
 
